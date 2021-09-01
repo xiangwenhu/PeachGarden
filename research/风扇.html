@@ -8,8 +8,7 @@
     <title>Document</title>
 
     <script type="text/javascript">
-        
-    
+
     </script>
 
     <style>
@@ -38,13 +37,12 @@
         .fan-x {
             margin: auto;
             margin-top: 300px;
-            width: 230px;
-            height: 230px;
+            width: 115px;
+            height: 115px;
             animation: spin infinite 12s cubic-bezier(.68, .06, .15, .84) 1000ms forwards;
             transition: 2s;
             transform-origin: center center;
             z-index: 1;
-            /* transform: rotate3d(1, 1, 1, 79deg); */
             -webkit-perspective: 10000;
 
         }
@@ -57,8 +55,8 @@
         .fan-blades .center {
             position: absolute;
             overflow: hidden;
-            width: 40px;
-            height: 40px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             left: 50%;
             top: 50%;
@@ -70,17 +68,17 @@
         .fan-blades .center::after {
             display: block;
             content: "";
-            width: 40px;
-            height: 20px;
-            background: #0aa06e;
+            width: 20px;
+            height: 10px;
+            background: #32ba7c;
         }
 
         .fan-blades .blade {
             position: absolute;
-            width: 50px;
+            width: 25px;
             height: 100%;
             left: 50%;
-            transform: translateX(-50%) skewY(25deg);
+            transform: translateX(-50%);
             perspective: 500px;
             transform-style: preserve-3d;
         }
@@ -89,10 +87,10 @@
         .fan-blades .blade span {
             width: 100%;
             height: 200%;
-            border-radius: 44px;
+            border-radius: 50%;
             background: #ffc114;
             position: absolute;
-            top: -66px;
+            top: -33px;
             display: block;
             transform-style: preserve-3d;
             transform: rotateX(81deg);
@@ -105,15 +103,14 @@
             content: "";
             display: block;
             background: #fca12a;
-            transform: rotate(0deg);
         }
 
         .fan-blades .blade:nth-child(2) {
-            transform: translateX(-50%) rotate(120deg) skewY(25deg);
+            transform: translateX(-50%) rotate(120deg)
         }
 
         .fan-blades .blade:nth-child(3) {
-            transform: translateX(-50%) rotate(240deg) skewY(25deg);
+            transform: translateX(-50%) rotate(240deg);
         }
     </style>
 </head>
