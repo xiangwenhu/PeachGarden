@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+        
+    
+    </script>
+
+    <style>
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(960deg);
+            }
+        }
+
+        @keyframes off {
+            to {
+                transform: rotate(380deg);
+            }
+        }
+
+        @keyframes off2 {
+            to {
+                transform: rotate(880deg);
+            }
+        }
+
+        .fan-x {
+            margin: auto;
+            margin-top: 300px;
+            width: 230px;
+            height: 230px;
+            animation: spin infinite 12s cubic-bezier(.68, .06, .15, .84) 1000ms forwards;
+            transition: 2s;
+            transform-origin: center center;
+            z-index: 1;
+            /* transform: rotate3d(1, 1, 1, 79deg); */
+            -webkit-perspective: 10000;
+
+        }
+
+
+        .blade span {
+            display: block;
+        }
+
+        .fan-blades .center {
+            position: absolute;
+            overflow: hidden;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            background: #32ba7c;
+            z-index: 2;
+        }
+
+        .fan-blades .center::after {
+            display: block;
+            content: "";
+            width: 40px;
+            height: 20px;
+            background: #0aa06e;
+        }
+
+        .fan-blades .blade {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%) skewY(25deg);
+            perspective: 500px;
+            transform-style: preserve-3d;
+        }
+
+
+        .fan-blades .blade span {
+            width: 100%;
+            height: 200%;
+            border-radius: 44px;
+            background: #ffc114;
+            position: absolute;
+            top: -66px;
+            display: block;
+            transform-style: preserve-3d;
+            transform: rotateX(81deg);
+            overflow: hidden;
+        }
+
+        .fan-blades .blade span::after {
+            width: 50%;
+            height: 100%;
+            content: "";
+            display: block;
+            background: #fca12a;
+            transform: rotate(0deg);
+        }
+
+        .fan-blades .blade:nth-child(2) {
+            transform: translateX(-50%) rotate(120deg) skewY(25deg);
+        }
+
+        .fan-blades .blade:nth-child(3) {
+            transform: translateX(-50%) rotate(240deg) skewY(25deg);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="fan-x">
+        <div class="fan-blades">
+            <div class="center"></div>
+            <div class="blade"><span></span></div>
+            <div class="blade"><span></span></div>
+            <div class="blade"><span></span></div>
+        </div>
+    </div>
+
+
+    <script>
+        // 参考 https://www.moyublog.com/demo/93_9289.html
+
+
+    </script>
+</body>
+
+</html>
