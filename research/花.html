@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0
+        }
+
+        .flower {
+            width: 12vmin;
+            left: 48vw;
+            transform: rotate(-6deg);
+            transform-origin: center bottom;
+            top: 50%;
+            z-index: -1;
+            position: absolute;
+        }
+
+        body:hover .flower {
+            animation: swing 2s ease 0s 1, swing 3.5s ease 2s 1, swing 5s ease 5.5s 1;
+        }
+
+        @keyframes swing {
+            0% {
+                transform: rotate(-6deg);
+            }
+
+            60% {
+                transform: rotate(-4deg);
+            }
+
+            100% {
+                transform: rotate(-6deg);
+            }
+        }
+
+        .stem {
+            width: 10vmin;
+            height: 20vmin;
+            left: 2vmin;
+            border-radius: 50%;
+            border-left: 1vmin solid #36652c;
+        }
+
+        .leaves:before,
+        .leaves:after {
+            position: absolute;
+            content: "";
+            width: 8vmin;
+            height: 4vmin;
+            background: linear-gradient(45deg, #36652c, #5f923a);
+            border-radius: 100% 0;
+            top: 6vmin;
+        }
+
+        .leaves:after {
+            left: -7.5vmin;
+            top: 2vmin;
+            transform: rotate(65deg);
+        }
+
+        .petals {
+            width: 12vmin;
+            height: 15vmin;
+            transform: rotate(53deg);
+            left: 2vmin;
+            top: -8vmin;
+            position: absolute;
+        }
+
+        .petals:before,
+        .petals:after {
+            position: absolute;
+            content: "";
+            background: linear-gradient(0deg, #250067, #673ab7);
+            width: 6.5vmin;
+            height: 6vmin;
+            border-radius: 100% 0;
+            top: 5vmin;
+            left: 2vmin;
+            transform: rotate(-35deg);
+            border-top: 0.35vmin solid #73bbf4;
+            z-index: 1;
+        }
+
+        .petals:after {
+            background: linear-gradient(0deg, #250067, #673ab7);
+            left: -1vmin;
+            transform: rotate(-69deg);
+            border-right: 0.5vmin solid #74bbf4;
+            border-top: 0;
+        }
+
+        .petals span {
+            position: absolute;
+            background: linear-gradient(0deg, #250067, #673ab7);
+            width: 4vmin;
+            height: 4vmin;
+            border-radius: 0 100%;
+            transform: rotate(43deg);
+            left: 1.8vmin;
+            top: 3vmin;
+            border-top: 2px solid #6fb9f4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="flower">
+        <div class="stem">
+            <div class="leaves"></div>
+        </div>
+        <div class="petals">
+            <span></span>
+        </div>
+    </div>
+</body>
+
+</html>
