@@ -18,45 +18,33 @@
             }
 
             to {
-                transform: rotate(960deg);
-            }
-        }
-
-        @keyframes off {
-            to {
-                transform: rotate(380deg);
-            }
-        }
-
-        @keyframes off2 {
-            to {
-                transform: rotate(880deg);
+                transform: rotate(1080deg);
             }
         }
 
         .fan-x {
+            font-size: 10px;
             margin: auto;
-            margin-top: 300px;
-            width: 115px;
-            height: 115px;
-            animation: spin infinite 12s cubic-bezier(.68, .06, .15, .84) 1000ms forwards;
+            margin-top: 30em;
+            width: 11.5em;
+            height: 11.5em;
+            /* animation: spin infinite 12s cubic-bezier(.68, .06, .15, .84) 1000ms forwards; */
             transition: 2s;
             transform-origin: center center;
             z-index: 1;
             -webkit-perspective: 10000;
-
         }
 
 
-        .blade span {
+        .fan-x .blade span {
             display: block;
         }
 
-        .fan-blades .center {
+        .fan-x .fan-blades .center {
             position: absolute;
             overflow: hidden;
-            width: 20px;
-            height: 20px;
+            width: 2em;
+            height: 2em;
             border-radius: 50%;
             left: 50%;
             top: 50%;
@@ -65,39 +53,39 @@
             z-index: 2;
         }
 
-        .fan-blades .center::after {
+        .fan-x .fan-blades .center::after {
             display: block;
             content: "";
-            width: 20px;
-            height: 10px;
-            background: #32ba7c;
+            width: 2em;
+            height: 1em;
+            background: #07754f;;
         }
 
-        .fan-blades .blade {
+        .fan-x .fan-blades .blade {
             position: absolute;
-            width: 25px;
+            width: 2.5em;
             height: 100%;
             left: 50%;
             transform: translateX(-50%);
-            perspective: 500px;
+            perspective: 50em;
             transform-style: preserve-3d;
         }
 
 
-        .fan-blades .blade span {
+        .fan-x .fan-blades .blade span {
             width: 100%;
             height: 200%;
             border-radius: 50%;
             background: #ffc114;
             position: absolute;
-            top: -33px;
+            top: -3.3em;
             display: block;
             transform-style: preserve-3d;
             transform: rotateX(81deg);
             overflow: hidden;
         }
 
-        .fan-blades .blade span::after {
+        .fan-x .fan-blades .blade span::after {
             width: 50%;
             height: 100%;
             content: "";
@@ -105,11 +93,11 @@
             background: #fca12a;
         }
 
-        .fan-blades .blade:nth-child(2) {
+        .fan-x .fan-blades .blade:nth-child(2) {
             transform: translateX(-50%) rotate(120deg)
         }
 
-        .fan-blades .blade:nth-child(3) {
+        .fan-x .fan-blades .blade:nth-child(3) {
             transform: translateX(-50%) rotate(240deg);
         }
     </style>

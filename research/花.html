@@ -7,7 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+
     <style>
+        p {}
+
+        :root {
+            --flower-color-red-start: red;
+            --flower-color-red-end: rgba(255, 123, 100, 0.993);
+        }
+
         * {
             box-sizing: border-box;
         }
@@ -16,65 +24,103 @@
             margin: 0
         }
 
+
+        .flowers {
+            overflow: hidden;
+            padding-left: 50px;
+        }
+
+        .flowers .flower {
+            font-size: 4px;
+        }
+
+        .flowers .flower:nth-child(1) {
+            font-size: 5px;
+        }
+
+        .flowers .flower:nth-child(2) {
+            font-size: 6px;
+        }
+
+        .flowers .flower:nth-child(3) {
+            font-size: 2.5px;
+        }
+
+        .flowers .flower:nth-child(4) {
+            font-size: 3.5px;
+        }
+
+        .flowers .flower:nth-child(5) {
+            font-size: 4px;
+        }
+
+        .flowers .flower:nth-child(6) {
+            font-size: 4.5px;
+        }
+
         .flower {
-            width: 12vmin;
-            left: 48vw;
+            float: left;
+            margin-top: 10vh;
+        }
+
+
+        .flower {
+            width: 12em;
             transform: rotate(-6deg);
             transform-origin: center bottom;
             top: 50%;
             z-index: -1;
-            position: absolute;
         }
 
-        body:hover .flower {
-            animation: swing 2s ease 0s 1, swing 3.5s ease 2s 1, swing 5s ease 5.5s 1;
+        .flowers .flower {
+            animation: flower-swing 2s ease 0s infinite, flower-swing 3.5s ease 2s infinite, flower-swing 5s ease 5.5s infinite;
         }
 
-        @keyframes swing {
+        @keyframes flower-swing {
             0% {
-                transform: rotate(-6deg);
+                transform: rotate(-8deg);
             }
 
             60% {
-                transform: rotate(-4deg);
+                transform: rotate(-2deg);
             }
 
             100% {
-                transform: rotate(-6deg);
+                transform: rotate(-8deg);
             }
         }
 
         .stem {
-            width: 10vmin;
-            height: 20vmin;
-            left: 2vmin;
+            width: 10em;
+            height: 20em;
+            left: 2em;
             border-radius: 50%;
-            border-left: 1vmin solid #36652c;
+            border-left: 1em solid #36652c;
         }
 
         .leaves:before,
         .leaves:after {
             position: absolute;
             content: "";
-            width: 8vmin;
-            height: 4vmin;
+            width: 8em;
+            height: 4em;
             background: linear-gradient(45deg, #36652c, #5f923a);
             border-radius: 100% 0;
-            top: 6vmin;
+            top: 6em;
         }
 
         .leaves:after {
-            left: -7.5vmin;
-            top: 2vmin;
+            left: -7.5em;
+            top: 2em;
             transform: rotate(65deg);
         }
 
         .petals {
-            width: 12vmin;
-            height: 15vmin;
+            width: 12em;
+            height: 15em;
             transform: rotate(53deg);
-            left: 2vmin;
-            top: -8vmin;
+            left: 2em;
+            top: -8em;
             position: absolute;
         }
 
@@ -82,49 +128,138 @@
         .petals:after {
             position: absolute;
             content: "";
-            background: linear-gradient(0deg, #250067, #673ab7);
-            width: 6.5vmin;
-            height: 6vmin;
+            background: linear-gradient(0deg, var(--flower-color-red-start), var(--flower-color-red-end));
+            width: 6.5em;
+            height: 6em;
             border-radius: 100% 0;
-            top: 5vmin;
-            left: 2vmin;
+            top: 5em;
+            left: 2em;
             transform: rotate(-35deg);
-            border-top: 0.35vmin solid #73bbf4;
+            border-top: 0.35em solid #cc410a;
             z-index: 1;
         }
 
         .petals:after {
-            background: linear-gradient(0deg, #250067, #673ab7);
-            left: -1vmin;
+            background: linear-gradient(0deg, var(--flower-color-red-start), var(--flower-color-red-end));
+            left: -1em;
             transform: rotate(-69deg);
-            border-right: 0.5vmin solid #74bbf4;
+            border-right: 0.5em solid #cc410a;
             border-top: 0;
         }
 
         .petals span {
             position: absolute;
-            background: linear-gradient(0deg, #250067, #673ab7);
-            width: 4vmin;
-            height: 4vmin;
+            background: linear-gradient(0deg, var(--flower-color-red-start), var(--flower-color-red-end));
+            width: 4em;
+            height: 4em;
             border-radius: 0 100%;
             transform: rotate(43deg);
-            left: 1.8vmin;
-            top: 3vmin;
-            border-top: 2px solid #6fb9f4;
+            left: 1.8em;
+            top: 3em;
+            border-top: 2px solid #cc410a;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="flower">
-        <div class="stem">
-            <div class="leaves"></div>
+
+    <div class="flowers">
+        <div class="flower">
+            <div class="stem">
+                <div class="leaves"></div>
+            </div>
+            <div class="petals">
+                <span></span>
+            </div>
         </div>
-        <div class="petals">
-            <span></span>
+        <div class="flower">
+            <div class="stem">
+                <div class="leaves"></div>
+            </div>
+            <div class="petals">
+                <span></span>
+            </div>
+        </div>
+        <div class="flower">
+            <div class="stem">
+                <div class="leaves"></div>
+            </div>
+            <div class="petals">
+                <span></span>
+            </div>
+        </div>
+        <div class="flower">
+            <div class="stem">
+                <div class="leaves"></div>
+            </div>
+            <div class="petals">
+                <span></span>
+            </div>
+        </div>
+        <div class="flower">
+            <div class="stem">
+                <div class="leaves"></div>
+            </div>
+            <div class="petals">
+                <span></span>
+            </div>
+        </div>
+        <div class="flower">
+            <div class="stem">
+                <div class="leaves"></div>
+            </div>
+            <div class="petals">
+                <span></span>
+            </div>
         </div>
     </div>
+
+    <div>
+        <ul>
+            <li>
+                <b>叶子:</b>
+                <p>叶子形状: 长方形 + border-radius: 100% 0 </p>
+                <p>颜色渐变： background: linear-gradient(45deg, #36652c, #5f923a)</p>
+            </li>
+            <li>
+                <b> 花:</b>
+                <p>花瓣形状: 长方形 + border-radius: 100% 0 </p>
+                <p>花的形状：层级覆盖</p>
+                <p>花边颜色：单边border设置 border-top: 0.35em solid #cc410a; </p>
+            </li>
+
+            <li>
+                <b>花茎:</b>
+                <p>花茎形状: border-radius: 50% + 单边边框 border-left: 1em solid #36652c; </p>
+            </li>
+            <li>
+                <b>摇摆动画：</b>
+                <p>
+                    以底部为原点，roate
+                <pre>
+                        @keyframes flower-swing {
+                            0% {
+                                transform: rotate(-8deg);
+                            }                
+                            60% {
+                                transform: rotate(-2deg);
+                            }                
+                            100% {
+                                transform: rotate(-8deg);
+                            }
+                        }
+                    </pre>
+                </p>
+            </li>
+            <li>
+                <b>不同大小的花：</b>
+                <p>em实现</p>
+                <p>css scale 也可以实现，不如em灵活</p>
+            </li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
